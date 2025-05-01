@@ -9,7 +9,7 @@ export const redirectToGoogle = (req: Request, res: Response) => {
           'https://www.googleapis.com/auth/userinfo.profile',
           'https://www.googleapis.com/auth/userinfo.email'
         ],
-        redirect_uri: process.env.GOOGLE_REDIRECT_URI  // ✅ Add this
+        redirect_uri: process.env.GOOGLE_REDIRECT_URI 
       });
     
       res.redirect(url);
