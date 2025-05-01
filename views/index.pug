@@ -1,0 +1,78 @@
+doctype html
+html
+  head
+    title Authentication App
+    style.
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        padding: 2rem;
+        background: #f0f2f5;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .login-buttons {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .login-buttons a button {
+        padding: 0.7rem 1.5rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      .google-btn {
+        background-color: #db4437;
+      }
+
+      .twitter-btn {
+        background-color: #1da1f2;
+      }
+
+      .facebook-btn {
+        background-color: #1877f2;
+      }
+
+      .login-buttons a button:hover {
+        transform: scale(1.05);
+      }
+
+      img {
+        border-radius: 50%;
+        margin-top: 1rem;
+      }
+
+  body
+    h1 Hello from Pug and jQuery!
+
+    if user
+      div
+        img(src=user.picture, alt="Profile Picture", width="100")
+        p Name: #{user.name}
+        p Email: #{user.email}
+        a(href="/logout") Logout
+    else
+      .login-buttons
+        a(href="/auth/google")
+          button.google-btn Login with Google
+        a(href="/auth/twitter")
+          button.twitter-btn Login with Twitter
+        a(href="/auth/facebook")
+          button.facebook-btn Login with Facebook
+
+    script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+    script.
+      $(document).ready(function() {
+        $("h1").text("Welcome to the Auth App!");
+      });
